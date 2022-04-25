@@ -1,5 +1,6 @@
 from cmath import sqrt
 from math import factorial
+from scipy import interpolate
 def fact(n):
 	n=5
 	i=0
@@ -21,9 +22,7 @@ def fact(n):
 	pass
 
 def roots(a, b, c):
-	a=1
-	b=4
-	c=5
+	
 	h= (b*b)-a*4*c
 	h2=sqrt(h)
 	
@@ -31,10 +30,10 @@ def roots(a, b, c):
 		x1=(-b+h2)/(2*a)
 		
 		return x1
-		print(x1)
+		
 	
-	if h<=0:
-		print(-b/2*a )
+	else :
+		
 		return -b/2*a  
 		
 	
@@ -49,7 +48,18 @@ def roots(a, b, c):
 	"""
 	pass
 
-def integrate(function, lower, upper):
+def integrate(f, l, u):
+	
+	
+	def fonc(k):
+		k=list(f)
+		return k
+
+	i=quad(fonc,l,u)
+	
+	eval(f,{"x":1}) #pass a string ex: 'x+1'
+	eval(f,{"x":1})
+
 	"""Approximates the integral of a fonction between two bounds
 	
 	Pre: 'function' is a valid Python expression with x as a variable,
