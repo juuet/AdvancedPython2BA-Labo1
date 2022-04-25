@@ -1,8 +1,3 @@
-# utils.py
-# Math library
-# Author: Sébastien Combéfis
-# Version: February 8, 2018
-
 def fact(n):
 	"""Computes the factorial of a natural number.
 	
