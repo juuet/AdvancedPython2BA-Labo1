@@ -1,4 +1,17 @@
+from cmath import sqrt
+from math import factorial
 def fact(n):
+	n=5
+	i=0
+	factoriel = 1
+	if n>=0:
+		while i<n:
+			print(factoriel)
+			factoriel *=n-i
+			i +=1
+			
+		return factoriel # si on ne retourne pas la dernière valeur factorielle, elle sera tjrs =1
+	else: print('ValueError')
 	"""Computes the factorial of a natural number.
 	
 	Pre: -
@@ -8,6 +21,26 @@ def fact(n):
 	pass
 
 def roots(a, b, c):
+	a=1
+	b=4
+	c=5
+	h= (b*b)-a*4*c
+	h2=sqrt(h)
+	
+	if h>0:
+		x1=(-b+h2)/(2*a)
+		
+		return x1
+		print(x1)
+	
+	if h<=0:
+		print(-b/2*a )
+		return -b/2*a  
+		
+	
+
+
+
 	"""Computes the roots of the ax^2 + bx + x = 0 polynomial.
 	
 	Pre: -
