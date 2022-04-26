@@ -1,10 +1,13 @@
 from cmath import sqrt
+from gc import garbage
 from math import factorial
 
 from scipy import interpolate 
+from scipy.integrate import quad
+
+
 
 def fact(n):
-	n=5
 	i=0
 	factoriel = 1
 	if n>=0:
@@ -51,15 +54,14 @@ def roots(a, b, c):
 	pass
 
 def integrate(f, l, u):
+	y = lambda f: f
+	print('y',y)
+	i=quad(lambda x: eval(f, {'x':x}), l, u) # intègre n'importe quelle equation f avec variable x dans l'equation
+	
+	return i
 	
 	
-	def fonc(k):
-		k=list(f)
-		return k
-
-	i=quad(fonc,l,u)
-	
-	eval(f,{"x":1}) #pass a string ex: 'x+1'
+	eval(f,{"x":1}) 
 	eval(f,{"x":1})
 
 	"""Approximates the integral of a fonction between two bounds
